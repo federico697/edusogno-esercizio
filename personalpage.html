@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="assets/styles/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+                <!-- qui ci andrà logo -->
+                <div id="logo"><img src="../edusogno-esercizio/logo-edusogno.svg" width="100px" alt=""></div>
+                <button> <a href="php/logout.php">LOGOUT</a> </button>
+        </header>
+
+        <section>
+            <!-- do l'id welcome e container-events per richiamarlo in js per iserire gli eventi in modo dinamico -->
+            <h1 id="welcome">Ciao NOME ecco i tuoi eventi</h1>
+            <div id="container-events"></div>
+        </section>
+    </body>
+    <script>
+        function httpGetAsync(theUrl, callback){
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() { 
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+            xmlHttp.send(null);
+        }
+        window.onload = function(){
+            httpGetAsync('php/dashboard.php', function(json){
+                json = JSON.parse(json);
+                if(json.ret == 0){
+                    var name = json.name;
+                    var events = json.events;
+                    var welcome = document.getElementById('welcome');
+                    welcome.innerText = welcome.innerText.replace("NOME", name);
+                    containerEvents = document.getElementById('container-events');
+                    events.forEach(event => {
+                        var e  = document.createElement('div');
+                        e.classList.add('event');
+                        var h2 = document.createElement('h2');
+                        h2.innerText = event.name;
+                        var p = document.createElement('p');
+                        p.innerText = event.date;
+                        var btn = document.createElement('button');
+                        btn.innerText = "JOIN";
+
+                        e.appendChild(h2);
+                        e.appendChild(p);
+                        e.appendChild(btn);
+                        containerEvents.appendChild(e);
+                    });
+                }else{
+                    location.href = 'index.html?msg=Login non effettuato'
+                }
+            })
+        }
+    </script>
+</html>

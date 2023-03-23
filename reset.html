@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="assets/styles/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+    <body>
+        <header>
+                <!-- qui ci andrà logo -->
+                <div id="logo"><img src="../edusogno-esercizio/logo-edusogno.svg" width="100px" alt=""></div>
+        </header>
+
+        <section>
+            <h1>Reimposta Password</h1>
+            <div class="container">
+                <form method="post" action="php/reset.php">
+                    <label for="email">Inserisci l'e-mail</label>
+                    <input type="email" id="email" placeholder="name@example.com" name="email">
+                    <label for="password">Inserisci la password</label>
+                    <div class="relative">
+                        <input type="password" name="password" id="password"  placeholder="Scrivila qui" required>
+                        <i class="fa-solid fa-eye fa-eye-slash" id="togglePassword"></i>
+                    </div>
+                    <input type="key" id="key" name="key" hidden>
+        
+    
+                    <button  type="submit" name="reset">REIMPOSTA</button>
+
+                </form>
+            </div>
+
+        </section>
+        <script src="../edusogno-esercizio/assets/js/script.js"></script>
+    </body>
+    <script>
+        var msg = (new URL(location.href)).searchParams.get('msg');
+        if (msg){
+            alert(msg);
+        }
+
+        var params = (new URL(location.href)).searchParams;
+        document.getElementById('email').value = params.get('email');
+        document.getElementById('key').value = params.get('key');
+    </script>
+</html>

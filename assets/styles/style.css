@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('../../bg-img.jpg');
+    /* background-position: center;
+    background-size: cover; */
+}
+header{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 6px rgba(58, 0, 249, 0.8);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > button{
+    background-color: rgb(0, 68, 255);
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 6px 24px;
+    border: none;
+}
+header > button > a{
+    text-decoration: none;
+    color: white;
+}
+#logo{
+    padding: 20px 0;
+    padding-left: 20px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section > h1{
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(25, 0, 109);
+}
+.container{
+    border: 1px solid blue;
+    border-radius: 1rem;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 450px; 
+    line-height: 35px;
+}
+form > p{
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+input{
+    border-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding: 2px 0;
+    width: 450px;
+}
+form > button{
+    padding: 10px 0;
+    background-color: rgb(0, 68, 255);
+    border-radius: 5px;
+    color: white;
+}
+form > label{
+    font-size: 12px;
+}
+input{
+    margin-bottom: 20px;
+}
+
+#container-events{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.event{
+    flex-basis: 30%;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    line-height: 30px;
+    margin-top: 100px;
+}
+.event > button{
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgb(0, 68, 255);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+.event > p{
+    opacity: 0.3;
+}
+.relative{
+    position: relative;
+    display: flex;
+}
+
+.fa-solid{
+    position: absolute;
+    right: 0;
+    color: rgb(0, 87, 255);
+    cursor: pointer;
+}
+
+
+
+/* html,body {
+    padding: 0;
+    margin: 0;
+    font: 14px 'Open sans', sans-serif;
+    color: #333;
+}
+h1 {
+    margin: 0;
+    margin-bottom: 20px;
+	font-size: 24px;
+}
+form {
+    padding: 40px;
+    background: #DDD;
+    border: 4px solid #AAA;
+    width: 360px;
+    margin: 30px auto;
+}
+input {
+	font: 14px 'Open Sans', sans-serif;
+    border: 2px solid #ccc;
+    padding: 6px;
+    display: block;
+	margin-bottom: 10px;
+    width: 96%;
+}
+button {
+    font: 14px 'Open Sans', sans-serif;
+    background-color: #4285f4;
+    color: white;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+	text-transform: uppercase;
+} */
